@@ -1,9 +1,6 @@
 # Defines StateDB target.
-
 project( StateDB )
-
 cmake_minimum_required( VERSION 3.5 )
-
 include( GNUInstallDirs )
 
 #SET( Boost_USE_STATIC_LIBS OFF)
@@ -18,10 +15,9 @@ if(APPLE AND UNIX AND "${OPENSSL_ROOT_DIR}" STREQUAL "")
 endif()
 
 find_package(OpenSSL REQUIRED) 
-
 include_directories(${OPENSSL_ROOT_DIR}/include)
 
-find_package(Boost 1.57 REQUIRED COMPONENTS filesystem unit_test_framework)
+FIND_PACKAGE(Boost 1.57 REQUIRED COMPONENTS filesystem unit_test_framework)
 
 set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wno-conversion" )
 

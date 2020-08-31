@@ -46,6 +46,7 @@ int eos_db::db_store_i64(name code, fc::sha256 scope, name table, name payer, ui
     const auto &tab = find_or_create_table(code, scope, table, payer);
     auto tableid = tab.id;
     const auto &obj = db.create<key_value_object>([&](auto &o) {
+        o.id = id;
         o.t_id = tableid;
         o.primary_key = id;
         o.value.assign(buffer, buffer_size);
