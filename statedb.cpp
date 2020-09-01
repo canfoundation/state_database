@@ -6,6 +6,9 @@ using namespace std;
 using namespace chainbase;
 using namespace boost::multi_index;
 
+const char stored_data[]  = "store my msg to db";
+const char updated_data[]  = "update my msg to db";
+
 struct config
 {
     boost::filesystem::path database_dir = "state";

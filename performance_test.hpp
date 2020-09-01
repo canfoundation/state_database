@@ -6,8 +6,8 @@
 #include "eos_db.hpp"
 #include <algorithm>
 
-inline constexpr char stored_data[]  = "store my msg to db";
-inline constexpr char updated_data[]  = "update my stored msg to db";
+extern const char stored_data[];
+extern const char updated_data[];
 
 template <typename TimeT = std::chrono::milliseconds>
 struct measure
