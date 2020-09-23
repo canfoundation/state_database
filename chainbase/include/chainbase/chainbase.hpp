@@ -671,7 +671,7 @@ namespace chainbase {
          virtual const std::string& type_name() const override { return BaseIndex_name; }
          virtual std::pair<int64_t, int64_t> undo_stack_revision_range()const override { return _base.undo_stack_revision_range(); }
 
-         virtual void     remove_object( void* id ) override { return _base.remove_object( *(static_cast<IDType*>(id)) ); }
+         virtual void     remove_object( void* id ) override { return _base.remove_object( *(reinterpret_cast<IDType*>(id)) ); }
       private:
          BaseIndex& _base;
          std::string BaseIndex_name = boost::core::demangle( typeid( typename BaseIndex::value_type ).name() );
